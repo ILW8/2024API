@@ -8,12 +8,12 @@ import teammgmt.models
 class TournamentPlayer(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
 
-    discord_user_id = models.CharField(max_length=20, blank=True)
-    discord_username = models.CharField(max_length=64)
-    discord_global_name = models.CharField(max_length=64)
-    discord_avatar = models.CharField(max_length=64)
+    discord_user_id = models.CharField(max_length=20)
+    discord_username = models.CharField(max_length=64, blank=True)
+    discord_global_name = models.CharField(max_length=64, blank=True)
+    discord_avatar = models.CharField(max_length=64, blank=True)
 
-    osu_user_id = models.BigIntegerField(blank=True)
+    osu_user_id = models.BigIntegerField()
     osu_username = models.CharField(max_length=64)
     osu_flag = models.CharField(max_length=4)
 
