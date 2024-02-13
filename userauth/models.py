@@ -40,7 +40,8 @@ class TournamentPlayer(models.Model):
         indexes = [
             models.Index(fields=['discord_user_id', 'osu_user_id']),
             models.Index(fields=['osu_user_id']),
-            models.Index(fields=['team'])
+            models.Index(fields=['team']),
+            models.Index(fields=['is_staff'])
         ]
         constraints = [
             CheckConstraint(name="not_both_roster_and_backup",
