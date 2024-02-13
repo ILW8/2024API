@@ -15,10 +15,6 @@ def get_staff_status(apps, schema_editor):
     )
 
 
-def undo_staff_status(*_):
-    pass
-
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -31,5 +27,5 @@ class Migration(migrations.Migration):
             name='is_staff',
             field=models.BooleanField(default=False),
         ),
-        migrations.RunPython(get_staff_status, undo_staff_status)
+        migrations.RunPython(get_staff_status, reverse_code=migrations.RunPython.noop)
     ]
