@@ -23,6 +23,7 @@ class TournamentPlayer(models.Model):
 
     is_organizer = models.BooleanField(default=False)
     is_captain = models.BooleanField(default=False)
+    is_staff = models.BooleanField(null=False, blank=False, default=False)
     team = models.ForeignKey(teammgmt.models.TournamentTeam,
                              related_name='players',
                              on_delete=models.PROTECT,
